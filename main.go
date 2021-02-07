@@ -44,6 +44,12 @@ type Options struct {
 	JSONDocumentationPath string
 	// YAMLDocumentationPath is the path exposed by yaml endpoint. Default to /documentation/yaml.
 	YAMLDocumentationPath string
+
+	// This logger will be used to log validation issues of the swagger.
+	Logger Logger
+	// ErrorIfGeneratingSwaggerIsInvalid specifices if an error should be returned if a swagger is
+	// not valid, or if an invalid swagger could be served.
+	ErrorIfGeneratedSwaggerIsInvalid bool
 }
 
 // NewRouter generate new router with swagger. Default to OpenAPI 3.0.0
